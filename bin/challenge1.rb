@@ -2,8 +2,8 @@ require_relative('../data/crm.rb')
 require 'pp'
 
 
+result = []
 CRM[:companies].each do |company|
-  result = []
   company_hash = {name: company[:name], employees: []}
   result << company_hash
   CRM[:people].each do |person|
@@ -19,8 +19,9 @@ CRM[:companies].each do |company|
       end
     end
   end
-  pp result
 end
+pp result
+
 
 # crm = File.read('../data/crm.rb')
 #
